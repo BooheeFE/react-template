@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+  <meta name="Keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+	<script>
+    (function () {
+      var src = '//cdn.jsdelivr.net/npm/eruda@1.5.0/eruda.min.js';
+      if (!/console=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+      document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+      document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+    })();
+	</script>
+	<title>React Template</title>
+</head>
+<body>
+	<div id="app"></div>
+</body>
+</html>
