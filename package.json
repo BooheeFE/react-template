@@ -1,7 +1,16 @@
 {
   "name": "react-template",
   "version": "0.0.1",
+  "description": "A starter template for React",
   "main": "main.js",
+  "scripts": {
+    "lint": "yarn lint:es && yarn lint:style",
+    "lint:es": "eslint src --fix",
+    "lint:style": "stylelint src/**/*.scss --fix",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js"
+  },
   "lint-staged": {
     "linters": {
       "*.js": [
@@ -14,9 +23,18 @@
       ]
     }
   },
-  "repository": "https://github.com/BooheeFE/react-template.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BooheeFE/react-template.git"
+  },
+  "keywords": [
+    "react"
+  ],
   "author": "simbawu <connect@simbawu.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BooheeFE/react-template/issues"
+  },
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
@@ -47,13 +65,5 @@
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"
-  },
-  "scripts": {
-    "lint": "yarn lint:es && yarn lint:style",
-    "lint:es": "eslint src --fix",
-    "lint:style": "stylelint src/**/*.scss --fix",
-    "precommit": "lint-staged",
-    "commitmsg": "commitlint -E GIT_PARAMS",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js"
   }
 }
