@@ -2,17 +2,17 @@ import React from 'react';
 import s from './index.scss';
 
 class IndexPage extends React.Component {
-	constructor(){
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	render() {
-		return (
-			<div className={s.container}>
+  render() {
+    return (
+      <div className={s.container}>
 				Hello World
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }
 
 export default IndexPage;
