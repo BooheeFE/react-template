@@ -7,9 +7,11 @@
     "lint": "yarn lint:es && yarn lint:style",
     "lint:es": "eslint src --fix",
     "lint:style": "stylelint src/**/*.scss --fix",
-    "precommit": "lint-staged",
-    "commitmsg": "commitlint -E GIT_PARAMS",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js"
+  },
+  "husky": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E GIT_PARAMS"
   },
   "lint-staged": {
     "linters": {
@@ -36,35 +38,36 @@
     "url": "https://github.com/BooheeFE/react-template/issues"
   },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
     "axios": "^0.18.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-loader": "^8.0.4",
     "cross-env": "^5.1.5",
-    "css-loader": "^1.0.0",
-    "eslint": "^4.19.1",
+    "css-loader": "^1.0.1",
+    "eslint": "^5.8.0",
     "eslint-config-booheefe": "^1.2.3",
     "html-webpack-plugin": "^3.2.0",
-    "husky": "^0.14.3",
+    "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
-    "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.21.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "stylelint": "^9.7.1",
     "stylelint-config-booheefe": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack": "^4.16.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
   }
 }
