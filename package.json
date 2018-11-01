@@ -9,7 +9,7 @@
     "lint:style": "stylelint src/**/*.scss --fix",
     "precommit": "lint-staged",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open 'Google Chrome' --config ./config/webpack/webpack.config.js"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js"
   },
   "lint-staged": {
     "linters": {
