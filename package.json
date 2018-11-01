@@ -8,7 +8,8 @@
     "lint:es": "eslint src --fix",
     "lint:style": "stylelint src/**/*.scss --fix",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.config.js",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js",
+    "analyzer": "yarn build --plugin webpack-bundle-analyzer/lib/BundleAnalyzerPlugin"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "stylelint-config-booheefe": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.23.1",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
