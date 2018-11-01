@@ -9,22 +9,6 @@
     "lint:style": "stylelint src/**/*.scss --fix",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js"
   },
-  "husky": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -E GIT_PARAMS"
-  },
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --fix",
-        "git add"
-      ],
-      "*.scss": [
-        "stylelint --fix",
-        "git add"
-      ]
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BooheeFE/react-template.git"
