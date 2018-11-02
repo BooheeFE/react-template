@@ -9,7 +9,7 @@ axios.interceptors.request.use(config => {
 axios.interceptors.response.use(response => {
   return response;
 }, error => {
-  return Promise.resolve(error.response);
+  return Promise.reject(error.response);
 });
 
 function errorState(response) {
@@ -38,11 +38,11 @@ const httpServer = (opts, data, baseURL, token) => {
       'Authorization': `Bearer ${token}`,
       'X-Requested-With': 'XMLHttpRequest',
       'Accept': 'application/json',
-      'Content-Type': 'application/json; charset=UTF-8'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     } : {
       'Authorization': `Bearer ${token}`,
       'X-Requested-With': 'XMLHttpRequest',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      'Content-Type': 'application/json; charset=UTF-8'
     }
   };
 
