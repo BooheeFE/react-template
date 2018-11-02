@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Link,
   Redirect,
@@ -9,13 +9,13 @@ import {
 
 import Index from './page/index/index';
 
-const router = (
-  <Router>
+const App = (
+  <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Index} />
       <Redirect from="/" to="/"/>
     </Switch>
-  </Router>
+  </BrowserRouter>
 );
 
-export default router;
+export default App;
