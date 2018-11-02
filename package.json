@@ -46,6 +46,7 @@
     "husky": "^1.1.2",
     "lint-staged": "^8.0.4",
     "node-sass": "^4.9.4",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "stylelint": "^9.7.1",
