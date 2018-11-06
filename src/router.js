@@ -7,9 +7,9 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Index from './page/index/index';
+import Index from './page/index/index.jsx';
 
-const App = (
+const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Index} />
