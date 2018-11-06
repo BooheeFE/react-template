@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "pConfig": ["./config/project/index.js"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
