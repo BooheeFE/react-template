@@ -1,7 +1,12 @@
 import httpServer from 'utils/http-server';
+import pConfig from 'pConfig';
+
+import demo from './demo';
 
 const project = {
-
+  cnode: {
+    baseURL: pConfig.CNODE_HOST
+  }
 };
 
 const actions = {
@@ -13,5 +18,5 @@ const actions = {
 };
 
 export default Object.assign(
-  actions
+  actions, demo
 );
