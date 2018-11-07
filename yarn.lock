@@ -2774,10 +2774,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-booheefe@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.3.tgz#4c44ae03228db90f0976e041e3e484bae498b3be"
-  integrity sha512-S9cOelqSLDJP1N5AIwEQsgM5oh6rPo7+Y0vQ1X976tQtiqfR0QLL8gByPw79pA5Y9DjfzxVTmbL/jAk4VPLkVw==
+eslint-config-booheefe@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.4.tgz#2f90dea06579c767150fedf269801fed8615d9bc"
+  integrity sha512-OmbsoKIsZJV01GDM5eb5tNU/zdkhIxavjxsq2Y8mXbYAJhcx6MPBY7PctTd2I8MKsT4QY8NURbyDHbBkz34XMw==
 
 eslint-scope@^4.0.0:
   version "4.0.0"
@@ -7793,10 +7793,10 @@ style-search@^0.1.0:
   resolved "https://registry.yarnpkg.com/style-search/-/style-search-0.1.0.tgz#7958c793e47e32e07d2b5cafe5c0bf8e12e77902"
   integrity sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
 
-stylelint-config-booheefe@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/stylelint-config-booheefe/-/stylelint-config-booheefe-1.0.0.tgz#f05880878cb56689ab37bff92e5edf0de6b420da"
-  integrity sha512-dBkE4kY0Bu8O+RswW7wKWwsFu9FwUTCWx4tsbtjUs+lxjT6yzrrTnhkP4QbRq/3XrAR29m09QuRA1v/EAmioxw==
+stylelint-config-booheefe@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-config-booheefe/-/stylelint-config-booheefe-1.0.1.tgz#544c3c13e1fca0ac40438509b0fdcf4bdea83961"
+  integrity sha512-05zhLv6STW8nxEu8y9CwiC+i5Y/sL1kjmR7hSfSIhEC37ouR4gu3RsyIQiIeqXBgIenXcPCilu7cHKJnfn7DGg==
   dependencies:
     stylelint-order "^0.8.1"
 
