@@ -1,0 +1,12 @@
+/*
+ * @desc global style
+ * @author simbawu
+ * @date 2018-11-05
+ */
+
+//:global内的className不会被转义
+:global {
+  body {
+    background-color: #fff;
+  }
+}
