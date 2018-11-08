@@ -56,7 +56,7 @@ const httpServer = (opts, data, baseURL, token) => {
     axios(httpDefaultOpts).then(
       (res) => {
         successState(res);
-        resolve(res);
+        resolve(res.data);
       }
     ).catch(
       (response) => {
