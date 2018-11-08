@@ -1,3 +1,9 @@
+/*
+ * @desc demo api
+ * @author simbawu
+ * @date 2018-11-08
+ */
+
 export default {
   /**
    * @name 获取cnode最新帖子
@@ -6,7 +12,7 @@ export default {
   getCnodeList(params) {
     return this.http('cnode', 'get', '/api/v1/topics', params)
       .then((response) => {
-        return response;
+        return response.data;
       });
   }
 };
