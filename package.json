@@ -36,6 +36,7 @@
     "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
+    "autodll-webpack-plugin": "^0.4.2",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.1.5",

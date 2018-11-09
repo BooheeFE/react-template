@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AutoDllPlugin = require('autodll-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -61,6 +62,23 @@ module.exports = {
       },
       hash: true,
       chunks: 'app'
+    }),
+    new AutoDllPlugin({
+      inject: true, // will inject the DLL bundle to index.html
+      debug: true,
+      filename: '[name].[chunkhash].js',
+      path: './dll',
+      entry: {
+        vendor: [
+          'react',
+          'react-dom',
+          'react-router-dom',
+          'redux',
+          'react-redux',
+          'redux-actions',
+          'axios'
+        ]
+      }
     })
   ],
   resolve: {
