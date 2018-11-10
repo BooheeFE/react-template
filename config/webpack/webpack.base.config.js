@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
+const HappyPack = require('happypack');
 
 module.exports = {
   entry: {
@@ -17,33 +18,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|dist)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        use: 'happypack/loader?id=jsx'
       }, {
         test: /\.scss$/,
         exclude: /(node_modules)/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            localIdentName: '[name]_[local]_[hash:base64:3]'
-          }
-        }, {
-          loader: 'sass-loader'
-        }, {
-          loader: 'postcss-loader',
-          options: {
-            config: {
-              path: path.resolve(__dirname, '../postcss.config.js')
-            }
-          }
-        }]
+        use: 'happypack/loader?id=styles'
       }
     ]
   },
@@ -79,6 +58,38 @@ module.exports = {
           'axios'
         ]
       }
+    }),
+    new HappyPack({
+      id: 'jsx',
+      threads: 1,
+      loaders: [{
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }]
+    }),
+    new HappyPack({
+      id: 'styles',
+      threads: 1,
+      loaders: [{
+        loader: 'style-loader'
+      }, {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[name]_[local]_[hash:base64:3]'
+        }
+      }, {
+        loader: 'sass-loader'
+      }, {
+        loader: 'postcss-loader',
+        options: {
+          config: {
+            path: path.resolve(__dirname, '../postcss.config.js')
+          }
+        }
+      }]
     })
   ],
   resolve: {
