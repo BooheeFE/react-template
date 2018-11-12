@@ -3,6 +3,10 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const HappyPack = require('happypack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+if (!process.env.NODE_ENV) process.env.NODE_ENV = 'development';
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
@@ -10,7 +14,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../../dist'),
-    filename: '[name].js',
+    filename: '[name].[hash].js',
     publicPath: './'
   },
   module: {
@@ -22,7 +26,10 @@ module.exports = {
       }, {
         test: /\.scss$/,
         exclude: /(node_modules)/,
-        use: 'happypack/loader?id=styles'
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'happypack/loader?id=styles'
+        ]
       }
     ]
   },
@@ -39,7 +46,6 @@ module.exports = {
         collapseBooleanAttributes: true,
         collapseWhitespace: true
       },
-      hash: true,
       chunks: 'app'
     }),
     new AutoDllPlugin({
@@ -73,8 +79,6 @@ module.exports = {
       id: 'styles',
       threads: 2,
       loaders: [{
-        loader: 'style-loader'
-      }, {
         loader: 'css-loader',
         options: {
           modules: true,
