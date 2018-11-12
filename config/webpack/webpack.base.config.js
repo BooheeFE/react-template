@@ -61,7 +61,7 @@ module.exports = {
     }),
     new HappyPack({
       id: 'jsx',
-      threads: 1,
+      threads: 4,
       loaders: [{
         loader: 'babel-loader',
         options: {
@@ -71,7 +71,7 @@ module.exports = {
     }),
     new HappyPack({
       id: 'styles',
-      threads: 1,
+      threads: 2,
       loaders: [{
         loader: 'style-loader'
       }, {
