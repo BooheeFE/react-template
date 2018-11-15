@@ -7,12 +7,12 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Index from './page/index/index.jsx';
+import IndexPage from './page/index';
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Index} />
+      <Route exact path="/" component={IndexPage} />
       <Redirect from="/" to="/"/>
     </Switch>
   </BrowserRouter>

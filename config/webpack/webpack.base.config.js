@@ -103,6 +103,7 @@ module.exports = {
       components: path.join(__dirname, '../../components'),
       pConfig: path.join(__dirname, '../../config/project'),
       utils: path.join(__dirname, '../../utils')
-    }
+    },
+    extensions: ['.js', '.jsx', '.json']
   }
 };
