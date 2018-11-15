@@ -1,15 +1,50 @@
-.DS_Store
-node_modules
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
 
-dist
+# Folders to ignore  
+node_modules/ 
+coverage/
+dist/
 
-# Editor directories and files
-.idea
+# temp file for git conflict merging  
+*.orig  
+*.log  
+*.rej  
+*.swo  
+*.swp  
+*.zip  
+*.vi  
+*~  
+*.sass-cache  
+*.tmp.html  
+*.dump  
+
+# OS or Editor folders
+.DS_Store  
+._*  
+.cache  
+.project  
+.settings  
+.tmproj  
+*.esproj  
+*.sublime-project  
+*.sublime-workspace  
+nbproject  
+thumbs.db
+*.iml
+.hg  
+.svn  
+.CVS  
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 .vscode
+.history
+.idea
+
+# Numerous always-ignore extensions  
+*.bak  
+*.patch  
+*.diff  
+*.err  
