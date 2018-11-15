@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import api from 'api';
-import actions from 'acitons';
+import Api from 'api';
+import Actions from 'acitons';
 import s from './index.scss';
 
 class IndexPage extends React.Component {
@@ -16,8 +16,8 @@ class IndexPage extends React.Component {
 
   initData() {
     const {dispatch} = this.props;
-    api.getCnodeList().then((res) => {
-      dispatch(actions.demoList(res));
+    Api.getCnodeList().then((res) => {
+      dispatch(Actions.demoList(res));
     });
   }
 
