@@ -3,8 +3,9 @@
     "target": "es6",
     "baseUrl": ".",
     "paths": {
-      "pConfig": ["./config/project/index.js"],
-      "api": ["./src/api/index.js"]
+      "acitons": ["./src/redux/actions/index.js"],
+      "api": ["./src/api/index.js"],
+      "pConfig": ["./config/project/index.js"]
     }
   },
   "exclude": [

@@ -98,6 +98,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
+      acitons: path.join(__dirname, '../../src/redux/acitons'),
       api: path.join(__dirname, '../../src/api'),
       components: path.join(__dirname, '../../components'),
       pConfig: path.join(__dirname, '../../config/project'),

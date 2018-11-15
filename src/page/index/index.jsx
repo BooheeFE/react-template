@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import api from 'api';
-import actions from '../../redux/acitons';
+import actions from 'acitons';
 import s from './index.scss';
 
 class IndexPage extends React.Component {
