@@ -10,7 +10,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    app: ['./src/main.js']
+    app: ['./src/main']
   },
   output: {
     path: path.resolve(__dirname, '../../dist'),
