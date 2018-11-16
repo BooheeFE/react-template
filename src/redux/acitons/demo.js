@@ -5,7 +5,7 @@
  */
 
 import { createActions } from 'redux-actions';
-import {DEMO_LIST} from '../actionTypes';
+import { DEMO_LIST } from '../actionTypes';
 
 export default createActions({
   [DEMO_LIST]: (list) => {

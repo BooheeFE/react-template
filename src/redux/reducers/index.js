@@ -4,7 +4,7 @@
  * @date 2018-11-08
  */
 
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import demo from './demo';
 
 const combinedReducer = combineReducers({

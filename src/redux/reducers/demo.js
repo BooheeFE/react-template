@@ -5,7 +5,7 @@
  */
 
 import { handleActions } from 'redux-actions';
-import {DEMO_LIST} from '../actionTypes';
+import { DEMO_LIST } from '../actionTypes';
 import initialState from '../initialState';
 
 export default handleActions({
