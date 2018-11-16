@@ -3033,10 +3033,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-booheefe@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.5.tgz#e7dad47289480f1d6d9cd4b64a52e69590c84270"
-  integrity sha512-H8K177Jj7kLMhOcDw28VzPmSFCxehkreYs/3CeyR4MpS2Drka0GUaww1UZRnGV47uxkhBKBn5K+E1XeWz2k6Fg==
+eslint-config-booheefe@^1.2.6:
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.6.tgz#54a6c4160b73248a3e3b0dbad631c8c2e44daa97"
+  integrity sha512-ZKXHxffgjK3NZ+CNrzZuz64R3GxKpgfJxAI4ut3YfFpL6466VbhuotJwX2yJzkgJihWv0GZU2/EMVNiK9CXtxw==
 
 eslint-scope@^4.0.0:
   version "4.0.0"
