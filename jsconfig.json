@@ -3,7 +3,7 @@
     "target": "es6",
     "baseUrl": ".",
     "paths": {
-      "acitons": ["./src/redux/actions/index.js"],
+      "actions": ["./src/redux/actions/index.js"],
       "api": ["./src/api/index.js"],
       "pConfig": ["./config/project/index.js"]
     }
