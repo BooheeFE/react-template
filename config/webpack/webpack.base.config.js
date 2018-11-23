@@ -18,20 +18,18 @@ module.exports = {
     publicPath: './'
   },
   module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|dist)/,
-        use: 'happypack/loader?id=jsx'
-      }, {
-        test: /\.scss$/,
-        exclude: /(node_modules)/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'happypack/loader?id=styles'
-        ]
-      }
-    ]
+    rules: [{
+      test: /\.jsx?$/,
+      exclude: /(node_modules|dist)/,
+      use: 'happypack/loader?id=jsx'
+    }, {
+      test: /\.scss$/,
+      exclude: /(node_modules)/,
+      use: [
+        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+        'happypack/loader?id=styles'
+      ]
+    }]
   },
   plugins: [
     new webpack.DefinePlugin({ // 定义环境变量
@@ -85,14 +83,14 @@ module.exports = {
           localIdentName: '[name]_[local]_[hash:base64:3]'
         }
       }, {
-        loader: 'sass-loader'
-      }, {
         loader: 'postcss-loader',
         options: {
           config: {
             path: path.resolve(__dirname, '../postcss.config.js')
           }
         }
+      }, {
+        loader: 'sass-loader'
       }]
     })
   ],
