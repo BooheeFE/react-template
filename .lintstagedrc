@@ -1,10 +1,10 @@
 {
   "linters": {
-    "*.js": [
+    "{components,config,src,tools}/**/*.{js,jsx}": [
       "eslint --fix",
       "git add"
     ],
-    "*.scss": [
+    "{src,components}/**/*.scss": [
       "stylelint --fix",
       "git add"
     ]

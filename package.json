@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "lint": "yarn lint:es && yarn lint:style",
-    "lint:es": "eslint src --fix",
-    "lint:style": "stylelint src/**/*.scss --fix",
+    "lint:es": "eslint --fix src components config tools --ext '.js,.jsx'",
+    "lint:style": "stylelint --fix \"{src,components}/**/*.scss\"",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack/webpack.config.js",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config ./config/webpack/webpack.config.js",
     "analyzer": "yarn build --plugin webpack-bundle-analyzer/lib/BundleAnalyzerPlugin"
