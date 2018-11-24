@@ -1,4 +1,4 @@
-import httpServer from 'utils/http-server';
+import httpServer from 'tools/http-server';
 import pConfig from 'pConfig';
 
 import demo from './demo';
@@ -11,7 +11,10 @@ const project = {
 
 const actions = {
   http(pName, method, url, data) {
-    return httpServer({ method: method, url: url }, data, ...Object.values(project[pName])).then((res) => {
+    return httpServer({
+      method: method,
+      url: url
+    }, data, ...Object.values(project[pName])).then((res) => {
       return res;
     });
   }
