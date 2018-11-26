@@ -59,7 +59,8 @@ module.exports = {
           'redux',
           'react-redux',
           'redux-actions',
-          'axios'
+          'axios',
+          'react-loadable'
         ]
       }
     }),
