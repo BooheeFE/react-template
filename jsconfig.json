@@ -5,6 +5,7 @@
     "paths": {
       "actions": ["./src/redux/actions/index.js"],
       "api": ["./src/api/index.js"],
+      "histories": ["./tools/history.js"],
       "pConfig": ["./config/project/index.js"]
     }
   },
