@@ -100,7 +100,9 @@ module.exports = {
       actions: path.join(__dirname, '../../src/redux/actions'),
       api: path.join(__dirname, '../../src/api'),
       components: path.join(__dirname, '../../components'),
+      histories: path.join(__dirname, '../../tools/history'),
       pConfig: path.join(__dirname, '../../config/project'),
+      src: path.join(__dirname, '../../src'),
       tools: path.join(__dirname, '../../tools')
     },
     extensions: ['.js', '.jsx', '.json']
