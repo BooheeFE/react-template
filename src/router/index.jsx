@@ -4,8 +4,7 @@ import Loadable from 'react-loadable';
 
 import history from 'histories';
 import routers from './routers';
-
-const Loading = () => <div>Loading...</div>;
+import ChunkLoading from 'components/chunk-loading';
 
 let Routers = routers.map(route => {
   return (
@@ -14,7 +13,9 @@ let Routers = routers.map(route => {
       path={route.path}
       component={Loadable({
         loader: () => import(`../pages/${route.page}`),
-        loading: Loading
+        loading: ChunkLoading,
+        delay: 300,
+        timeout: 10000
       })}
     />
   );
