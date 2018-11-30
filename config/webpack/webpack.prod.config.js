@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
-      chunkFilename: '[id].[contenthash].css'
+      chunkFilename: '[name].[contenthash].css'
     }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve('./')

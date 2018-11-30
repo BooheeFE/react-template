@@ -12,7 +12,8 @@ let Routers = routers.map(route => {
       exact
       path={route.path}
       component={Loadable({
-        loader: () => import(`../pages/${route.page}`),
+        loader: () =>
+          import(/* webpackChunkName: `[request]` */ `../pages/${route.page}`),
         loading: ChunkLoading,
         delay: 300,
         timeout: 10000
