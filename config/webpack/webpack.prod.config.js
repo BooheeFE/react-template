@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -22,6 +23,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[name].[contenthash].css'
+    }),
+    new webpack.optimize.MinChunkSizePlugin({
+      minChunkSize: 30000
     }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve('./')
