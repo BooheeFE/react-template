@@ -7,7 +7,9 @@ import store from './redux/store';
 ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>, document.getElementById('app'));
+  </Provider>,
+  document.getElementById('app')
+);
 
 if (module.hot) {
   module.hot.accept(App, function() {
