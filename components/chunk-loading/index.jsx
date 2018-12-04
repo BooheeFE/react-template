@@ -1,3 +1,10 @@
+/*
+ * @Desc: chunk 懒加载loading组件
+ * @Author: simbawu
+ * @Date: 2018-12-04 10:29:22
+ * @LastEditors: simbawu
+ * @LastEditTime: 2018-12-04 23:13:24
+ */
 import React from 'react';
 import s from './index.scss';
 
