@@ -1,3 +1,10 @@
+/*
+ * @Desc: http server
+ * @Author: simbawu
+ * @Date: 2018-11-26 19:01:53
+ * @LastEditors: simbawu
+ * @LastEditTime: 2018-12-05 20:42:23
+ */
 import axios from 'axios';
 
 axios.interceptors.request.use(config => {
