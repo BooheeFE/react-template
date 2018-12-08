@@ -1,8 +1,6 @@
 module.exports = {
   plugins: [
-    require('autoprefixer')({
-      browsers: ['last 3 versions', 'iOS 8']
-    }),
+    require('autoprefixer'),
     require('postcss-px-to-viewport')({
       viewportWidth: 750, // (Number) The width of the viewport.
       viewportHeight: 1334, // (Number) The height of the viewport.
