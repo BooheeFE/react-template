@@ -68,10 +68,7 @@ module.exports = {
       id: 'jsx',
       threads: 4,
       loaders: [{
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env']
-        }
+        loader: 'babel-loader'
       }]
     }),
     new HappyPack({
