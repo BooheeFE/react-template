@@ -1,3 +1,10 @@
+/*
+ * @Desc: webpack base config
+ * @Author: simbawu
+ * @Date: 2018-11-26 19:01:53
+ * @LastEditors: simbawu
+ * @LastEditTime: 2018-12-12 09:41:06
+ */
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -66,14 +73,14 @@ module.exports = {
     }),
     new HappyPack({
       id: 'jsx',
-      threads: 4,
+      threads: 2,
       loaders: [{
         loader: 'babel-loader'
       }]
     }),
     new HappyPack({
       id: 'styles',
-      threads: 2,
+      threads: 1,
       loaders: [{
         loader: 'css-loader',
         options: {
