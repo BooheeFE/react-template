@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-12-04 10:29:22
  * @LastEditors: simbawu
- * @LastEditTime: 2018-12-04 23:13:24
+ * @LastEditTime: 2018-12-12 09:38:09
  */
 import React from 'react';
 import s from './index.scss';
@@ -37,6 +37,7 @@ const Loading = () => (
 const chunkLoading = props => {
   const { retry, error, timedOut, pastDelay } = props;
   if (error) {
+    window.console.error(error);
     return (
       <div className={s.container}>
         <RetryBtn tips="网络链接失败，请重试！" retry={retry} />
