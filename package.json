@@ -25,7 +25,7 @@
     "autodll-webpack-plugin": "^0.4.2",
     "axios": "^0.18.0",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^1.0.0",
     "cross-env": "^5.1.5",
     "css-loader": "^1.0.1",
