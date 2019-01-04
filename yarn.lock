@@ -8240,10 +8240,10 @@ stylehacks@^4.0.0:
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
 
-stylelint-config-booheefe@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/stylelint-config-booheefe/-/stylelint-config-booheefe-1.0.4.tgz#f82c899f3cb01edd2a35fb235c5ccf9e0b7a2204"
-  integrity sha512-WuN+DOaQNnFhhSraoDVoX3Iq6WcJRKfePaDfsdA4nDcU4jCDN5PaXUh4aHOEduaRwLjWGYXLOodrUjoYEG70nA==
+stylelint-config-booheefe@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/stylelint-config-booheefe/-/stylelint-config-booheefe-1.0.5.tgz#e62e2c49d74ecb719c2b3f3511e762dc185a1670"
+  integrity sha512-o3dHuQ8q1GD5iTacWiyr0GpMHyycS2dee9WaZ4RFH7n9tdMW69BcavkjNfPaT877W2xSHpla+1NVVXLZKLg/xQ==
   dependencies:
     stylelint-order "^0.8.1"
 
