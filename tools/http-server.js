@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 17:54:40
+ * @LastEditTime: 2019-01-22 17:58:11
  */
 import axios from 'axios';
 
@@ -42,8 +42,8 @@ const httpServer = (opts, data, baseURL, token) => {
     baseURL: baseURL,
     url: opts.url,
     timeout: 10000,
-    params: Object.assign(publicOpts, data),
-    data: Object.assign(publicOpts, data),
+    params: { ...publicOpts, ...data },
+    data: { ...publicOpts, ...data },
     headers:
       opts.method === 'get'
         ? {
