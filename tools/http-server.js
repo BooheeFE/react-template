@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 17:58:11
+ * @LastEditTime: 2019-01-22 18:01:24
  */
 import axios from 'axios';
 
@@ -44,19 +44,12 @@ const httpServer = (opts, data, baseURL, token) => {
     timeout: 10000,
     params: { ...publicOpts, ...data },
     data: { ...publicOpts, ...data },
-    headers:
-      opts.method === 'get'
-        ? {
-          Authorization: `Bearer ${token}`,
-          'X-Requested-With': 'XMLHttpRequest',
-          Accept: 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-        : {
-          Authorization: `Bearer ${token}`,
-          'X-Requested-With': 'XMLHttpRequest',
-          'Content-Type': 'application/json; charset=UTF-8'
-        }
+    headers: {
+      Authorization: `Bearer ${token}`,
+      'X-Requested-With': 'XMLHttpRequest',
+      Accept: 'application/json',
+      'Content-Type': 'application/json; charset=UTF-8'
+    }
   };
 
   if (opts.method === 'get') {
