@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 18:01:24
+ * @LastEditTime: 2019-01-22 18:06:56
  */
 import axios from 'axios';
 
@@ -32,6 +32,19 @@ function errorState(response) {
 function successState(res) {
   // 正确处理
 }
+
+const axiosRequest = opts => {
+  return axios(opts)
+    .then(res => {
+      const { data } = res;
+      successState(data);
+      return data;
+    })
+    .catch(error => {
+      errorState(error);
+    });
+};
+
 const httpServer = (opts, data, baseURL, token) => {
   // 公共参数
   let publicOpts = {};
@@ -58,19 +71,7 @@ const httpServer = (opts, data, baseURL, token) => {
     delete httpDefaultOpts.params;
   }
 
-  let promise = new Promise(function(resolve, reject) {
-    axios(httpDefaultOpts)
-      .then(res => {
-        successState(res);
-        resolve(res.data);
-      })
-      .catch(response => {
-        errorState(response);
-        reject(response);
-      });
-  });
-
-  return promise;
+  return axiosRequest(httpDefaultOpts);
 };
 
 export default httpServer;
