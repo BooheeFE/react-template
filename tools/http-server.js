@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 18:06:56
+ * @LastEditTime: 2019-01-22 20:44:17
  */
 import axios from 'axios';
 
@@ -25,13 +25,11 @@ axios.interceptors.response.use(
   }
 );
 
-function errorState(response) {
-  // 错误处理
-}
+// 正确处理
+const successState = () => {};
 
-function successState(res) {
-  // 正确处理
-}
+// 错误处理
+const errorState = () => {};
 
 const axiosRequest = opts => {
   return axios(opts)
