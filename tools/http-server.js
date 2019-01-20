@@ -3,7 +3,7 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 20:44:17
+ * @LastEditTime: 2019-01-22 20:49:19
  */
 import axios from 'axios';
 
@@ -21,9 +21,64 @@ axios.interceptors.response.use(
     return response;
   },
   error => {
-    return Promise.reject(error.response);
+    axiosRetry(error);
   }
 );
+
+// axios response 错误拦截器
+const interceptorsResponseErr = err => {
+  return Promise.reject(err);
+};
+
+// axios 失败重试
+const axiosRetry = err => {
+  let { config, response } = err;
+
+  // retry配置开启检测
+  if (!config || !config.retry) {
+    return interceptorsResponseErr(err);
+  }
+
+  // http code 范围检测
+  if (response && response.status) {
+    let isInRange = false;
+    const retryStatusCodes = config.retryStatusCodes;
+    for (const [min, max] of retryStatusCodes) {
+      const status = response.status;
+      if (status >= min && status <= max) {
+        isInRange = true;
+        break;
+      }
+    }
+    if (!isInRange) {
+      return interceptorsResponseErr(err);
+    }
+  }
+
+  config.__retryCount = config.__retryCount || 0;
+
+  // retry次数检测
+  if (config.__retryCount >= config.retry) {
+    return interceptorsResponseErr(err);
+  }
+
+  config.__retryCount += 1;
+
+  // 延时时长优化
+  const backOffDelay = config.retryDelay
+    ? (1 / 2) * (Math.pow(2, config.__retryCount) - 1) * config.retryDelay
+    : 1;
+
+  let backoff = new Promise(function(resolve) {
+    setTimeout(function() {
+      resolve();
+    }, backOffDelay);
+  });
+
+  return backoff.then(function() {
+    return axiosRequest(config);
+  });
+};
 
 // 正确处理
 const successState = () => {};
@@ -60,7 +115,10 @@ const httpServer = (opts, data, baseURL, token) => {
       'X-Requested-With': 'XMLHttpRequest',
       Accept: 'application/json',
       'Content-Type': 'application/json; charset=UTF-8'
-    }
+    },
+    retry: 3,
+    retryStatusCodes: [[100, 199], [429, 429], [500, 599]],
+    retryDelay: 1000
   };
 
   if (opts.method === 'get') {
