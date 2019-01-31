@@ -3043,10 +3043,10 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.4, escape-string-regexp@^
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-booheefe@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.7.tgz#872dc0facc608c41097c3a70b9c81f4afed1779c"
-  integrity sha512-1NRnv9Cm2/NG1jW7yMw9wMaonfoLF2C/5PfOXHaxyDpLOZylSKcL7xXftiI/VtjJHziz+QHmjOxr3xzgedlNDg==
+eslint-config-booheefe@1.2.8:
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/eslint-config-booheefe/-/eslint-config-booheefe-1.2.8.tgz#cf1151b5a006824e22c68da05fd405756c48dcae"
+  integrity sha512-4cqWxPhHC8WVW75J/hmzJNtRx6WglTUJYIGdBWJIZagVdrydicVxYUYC3nLjAb2qLetzE2GYty5+iC0cS7/Lhg==
 
 eslint-plugin-react@^7.12.3:
   version "7.12.3"
