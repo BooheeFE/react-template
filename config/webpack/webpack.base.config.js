@@ -3,8 +3,8 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2018-12-12 09:41:06
  */
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,21 +25,25 @@ module.exports = {
     publicPath: './'
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      exclude: /(node_modules|dist)/,
-      use: 'happypack/loader?id=jsx'
-    }, {
-      test: /\.scss$/,
-      exclude: /(node_modules)/,
-      use: [
-        devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-        'happypack/loader?id=styles'
-      ]
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|dist)/,
+        use: 'happypack/loader?id=jsx'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'happypack/loader?id=styles'
+        ]
+      }
+    ]
   },
   plugins: [
-    new webpack.DefinePlugin({ // 定义环境变量
+    new webpack.DefinePlugin({
+      // 定义环境变量
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     }),
     new HtmlWebpackPlugin({
@@ -74,29 +78,37 @@ module.exports = {
     new HappyPack({
       id: 'jsx',
       threads: 2,
-      loaders: [{
-        loader: 'babel-loader'
-      }]
+      loaders: [
+        {
+          loader: 'babel-loader'
+        }
+      ]
     }),
     new HappyPack({
       id: 'styles',
       threads: 1,
-      loaders: [{
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          localIdentName: '[name]_[local]_[hash:base64:3]'
-        }
-      }, {
-        loader: 'postcss-loader',
-        options: {
-          config: {
-            path: path.resolve(__dirname, '../postcss.config.js')
+      loaders: [
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              mode: 'local',
+              localIdentName: '[name]_[local]_[hash:base64:3]'
+            }
           }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            config: {
+              path: path.resolve(__dirname, '../postcss.config.js')
+            }
+          }
+        },
+        {
+          loader: 'sass-loader'
         }
-      }, {
-        loader: 'sass-loader'
-      }]
+      ]
     })
   ],
   resolve: {
