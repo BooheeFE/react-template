@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Api from 'api';
-import Actions from 'actions';
+import Api from '@/api';
+import Actions from '@/actions';
 import s from './index.scss';
 
 class IndexPage extends React.Component {

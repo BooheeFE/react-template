@@ -2,11 +2,11 @@ import React from 'react';
 import { Router, Route, Redirect, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-import history from 'histories';
+import history from '@/histories';
 import routers from './routers';
-import ChunkLoading from 'components/chunk-loading';
+import ChunkLoading from '@/components/chunk-loading';
 
-let Routers = routers.map(route => {
+const Routers = routers.map(route => {
   return (
     <Route
       exact

@@ -1,5 +1,5 @@
-import httpServer from 'tools/http-server';
-import pConfig from 'pConfig';
+import httpServer from '@/tools/http-server';
+import pConfig from '@/pConfig';
 
 import demo from './demo';
 
