@@ -26,7 +26,7 @@ const App = () => (
   <Router history={history}>
     <Switch>
       {Routers}
-      <Redirect from="/" to="/" />
+      <Redirect from='/' to='/' />
     </Switch>
   </Router>
 );

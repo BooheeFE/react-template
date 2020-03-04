@@ -16,25 +16,18 @@ class IndexPage extends React.Component {
 
   initData() {
     const { dispatch } = this.props;
-    Api.getCnodeList().then((res) => {
+    Api.getCnodeList().then(res => {
       dispatch(Actions.demoList(res));
     });
   }
 
   render() {
-
-    return (
-      <div className={s.container}>
-				Hello World
-      </div>
-    );
+    return <div className={s.container}>Hello World</div>;
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-
-  };
+const mapStateToProps = state => {
+  return {};
 };
 
 export default connect(mapStateToProps)(IndexPage);

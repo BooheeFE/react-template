@@ -3,7 +3,6 @@
  * @Author: simbawu
  * @Date: 2018-11-26 19:01:53
  * @LastEditors: simbawu
- * @LastEditTime: 2019-01-22 20:49:19
  */
 import axios from 'axios';
 
@@ -32,7 +31,7 @@ const interceptorsResponseErr = err => {
 
 // axios 失败重试
 const axiosRetry = err => {
-  let { config, response } = err;
+  const { config, response } = err;
 
   // retry配置开启检测
   if (!config || !config.retry) {
@@ -69,7 +68,7 @@ const axiosRetry = err => {
     ? (1 / 2) * (Math.pow(2, config.__retryCount) - 1) * config.retryDelay
     : 1;
 
-  let backoff = new Promise(function(resolve) {
+  const backoff = new Promise(function(resolve) {
     setTimeout(function() {
       resolve();
     }, backOffDelay);
@@ -100,10 +99,10 @@ const axiosRequest = opts => {
 
 const httpServer = (opts, data, baseURL, token) => {
   // 公共参数
-  let publicOpts = {};
+  const publicOpts = {};
 
   // http默认配置
-  let httpDefaultOpts = {
+  const httpDefaultOpts = {
     method: opts.method,
     baseURL: baseURL,
     url: opts.url,
@@ -117,7 +116,11 @@ const httpServer = (opts, data, baseURL, token) => {
       'Content-Type': 'application/json; charset=UTF-8'
     },
     retry: 3,
-    retryStatusCodes: [[100, 199], [429, 429], [500, 599]],
+    retryStatusCodes: [
+      [100, 199],
+      [429, 429],
+      [500, 599]
+    ],
     retryDelay: 1000
   };
 
