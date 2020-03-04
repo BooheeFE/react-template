@@ -90,7 +90,7 @@ const axiosRequest = opts => {
     .then(res => {
       const { data } = res;
       successState(data);
-      return data;
+      return res;
     })
     .catch(error => {
       errorState(error);

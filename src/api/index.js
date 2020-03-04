@@ -19,7 +19,7 @@ const actions = {
       data,
       ...Object.values(project[pName])
     ).then(res => {
-      return res;
+      return res.data;
     });
   }
 };
